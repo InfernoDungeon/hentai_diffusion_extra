@@ -14,6 +14,7 @@ def install_package(package_name):
     subprocess.run("apt",  "install", package_name, "--yes")
 
 def download_model(model_dictionary, models_patch):
+    global installed_aria2
     if installed_aria2 == False:
         install_package("aria2")
     for model in model_dictionary:
