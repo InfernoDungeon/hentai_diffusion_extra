@@ -1,14 +1,17 @@
 import subprocess, os
 
 installed_aria2 = False
-try:
-    subprocess.run(["aria2c", "--quiet", "&>null"])
-    print("aria2 installed!")
-except:
-    print("aria2 not installed!")
-    install_package("aria2")
-    installed_aria2 = True
-    
+init()
+
+
+def init():
+    try:
+        subprocess.run(["aria2c", "--quiet", "&>null"])
+        print("aria2 installed!")
+    except:
+        print("aria2 not installed!")
+        install_package("aria2")
+        installed_aria2 = True
 
 def install_package(package_name):
     subprocess.run("apt",  "install", package_name, "--yes")
