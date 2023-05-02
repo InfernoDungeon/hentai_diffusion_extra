@@ -5,6 +5,7 @@ init()
 
 
 def init():
+    global installed_aria2
     try:
         subprocess.run(["aria2c", "--quiet", "&>null"])
         print("aria2 installed!")
