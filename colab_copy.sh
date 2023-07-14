@@ -1,7 +1,7 @@
 #!/bin/bash
 
-BIGFILE=/content/drive/MyDrive/DATA/combined/2021-12-29-combined.h5
-OUTFILE=/content/2021-12-29-combined.h5
+BIGFILE=$1
+OUTFILE=$2
 PARTSIZE=$((1*1024*1024*1024)) # 1 GiB
 FILESIZE=$(stat -c%s "$BIGFILE")
 echo "Size of $BIGFILE = $FILESIZE bytes."
