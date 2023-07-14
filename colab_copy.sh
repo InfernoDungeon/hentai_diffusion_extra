@@ -2,6 +2,7 @@
 
 BIGFILE=$1
 OUTFILE=$2
+echo $1 $2
 PARTSIZE=$((1*1024*1024*1024)) # 1 GiB
 FILESIZE=$(stat -c%s "$BIGFILE")
 echo "Size of $BIGFILE = $FILESIZE bytes."
